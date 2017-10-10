@@ -39,15 +39,15 @@ Rental.prototype.statement = function (customer) {
     //add frequent renter points
     frequentRenterPoints++;
     // add bonus for a two day new release rental
-    if (movie.code === 'new' && r.days > 2) frequentRenterPoints++;
+    if (movie.code === 'new' && r.days > 2)
+        frequentRenterPoints++;
 
     //print figures for this rental
     result += `\t${movie.title}\t${thisAmount}\n`;
     totalAmount += thisAmount;
   }
   // add footer lines
-  result += `Amount owed is ${totalAmount}\n`;
-  result += `You earned ${frequentRenterPoints} frequent renter points\n`;
+  result += `Amount owed is ${totalAmount}\n You earned ${frequentRenterPoints} frequent renter points\n`;
 
   return result;
 };
